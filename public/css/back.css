@@ -1,0 +1,9 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.marginInputForm{
+    margin: 10px 0 0 0;
+}

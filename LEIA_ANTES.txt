@@ -1,0 +1,8 @@
+-RODAR AS MIGRATIONS
+-RODAR A SEED
+
+OBS.: Criei um virtual host com o endereço "sisvoto".
+
+PAINEL ADMINISTRATIVO -> sisvoto/admin
+usuario: admin@sisvoto.com.br
+senha: 123456
