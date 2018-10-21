@@ -13,7 +13,7 @@ use Redirect;
 
 class SisvotoController extends Controller
 {
-    //
+    //    
 
     //Retorna a eleição que está ativa no sistema
     public function getEleicao(){
@@ -38,7 +38,7 @@ class SisvotoController extends Controller
     public function getHoraEleicao($eleicao){
         date_default_timezone_set('America/Sao_Paulo');
         $horaAtual = date('H:i:s');
-        if($horaAtual > $eleicao->horaInicioEleicao){
+        if($horaAtual >= $eleicao->horaInicioEleicao && $horaAtual <= $eleicao->horaFimEleicao){
             return TRUE;
         }
     }
@@ -69,7 +69,7 @@ class SisvotoController extends Controller
                         return view('sisvoto.emitirZeressima', compact('eleicao'));
                     }
                 }else{
-                    \Session::flash('mensagem_alerta', 'Aguarde a hora para iniciar a votação');
+                    \Session::flash('mensagem_alerta', 'Aguarde o horário de início da votação');
                     return view('sisvoto.index', compact('eleicao'));
                 }
             }else{
