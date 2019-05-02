@@ -20,13 +20,14 @@ class PainelController extends Controller
     //Retorna a eleição que está ativa no sistema
     public function getEleicao(){
         $eleicao = Eleicao::get();
-        $eleicaoAtiva = null;
+        //$eleicaoAtiva = null;
         foreach($eleicao as $e){
             if($e->ativaEleicao == 1){
-                $eleicaoAtiva = $e; //Passa todos os dados da eleição que está ativa
+                return $e;
+                //$eleicaoAtiva = $e; //Passa todos os dados da eleição que está ativa
             }
         }
-        return $eleicaoAtiva;
+        //return $eleicaoAtiva;
     }
 
     public function index(){
